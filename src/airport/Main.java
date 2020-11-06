@@ -1,8 +1,22 @@
 package airport;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Terminal terminal = new Terminal();
-        terminal.OutputOnDisplay("Полет нормальный");
+        Airport airport = new Airport();
+        Scanner in = new Scanner(System.in);
+        int exit = 1;
+        while (exit != 0) {
+            int planeCount = (int)(Math.random()*3) + 1;
+            for (int i = 0; i < planeCount; i++) {
+                airport.takePlane(PlaneGenerator.Generate(airport.getDate()));
+            }
+            airport.distributePlanes();
+            airport.checkFlights();
+            airport.updateTerminal();
+            airport.finishDay();
+            exit = in.nextInt();
+        }
     }
 }
