@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Terminal {
-    private List<String> messeges;
+    private final List<String> messages;
 
     public Terminal () {
-        this.messeges = new ArrayList<String>();
+        this.messages = new ArrayList<>();
     }
 
-    public void OutputOnDisplay(int day) {
+    public void outputOnDisplay(int day) {
         System.out.println("day " + day);
-        for (String msg : messeges)
+        for (String msg : messages)
             System.out.println(msg);
     }
 
-    public void getMessege(String msg) {
-        this.messeges.add(msg);
+    public void addMessage(String msg) {
+        this.messages.add(msg);
     }
 
-    public void cleanmessages() {
-        messeges.clear();
+    public void cleanMessages() {
+        messages.clear();
     }
 }

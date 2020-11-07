@@ -3,26 +3,27 @@ package airport.model;
 
 import java.util.List;
 
-public class Dispatcher {
-    private List<Runway> runways;
-    private Terminal terminal;
+public class Dispatcher implements Distributer {
+    private final List<Runway> runways;
+    private final Terminal terminal;
 
     public Dispatcher(List<Runway> runways, Terminal terminal) {
         this.runways = runways;
         this.terminal = terminal;
     }
 
-    public void disribute(List<Plane> planes) {
+    @Override
+    public void distribute(List<Plane> planes) {
 
         for (Runway runway : runways) {
             for (Plane plane : planes) {
-                if (plane.getType() == runway.getType() && runway.getStatus() == true) {
-                    if (plane.getStatus()) {
+                if (plane.getSize() == runway.getSize() && runway.isFree()) {
+                    if (plane.isFlying()) {
                         plane.land();
-                        terminal.getMessege("plane " + plane.getType() + " land on " + runway.getNumber() + " runway");
+                        terminal.addMessage("plane " + plane.getSize() + " land on " + runway.getNumber() + " runway");
                     } else {
                         plane.fly();
-                        terminal.getMessege("plane " + plane.getType() + " fly on " + runway.getNumber() + " runway");
+                        terminal.addMessage("plane " + plane.getSize() + " fly on " + runway.getNumber() + " runway");
                     }
                     runway.close();
                 }

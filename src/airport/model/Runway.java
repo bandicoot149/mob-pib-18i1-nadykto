@@ -2,21 +2,21 @@ package airport.model;
 
 public class Runway {
     private final int number;
-    private boolean status; // true - свободно, false - занято
-    private final Plane.Types type;
+    private boolean free;
+    private final Size size;
 
-    public Runway(Plane.Types type, int number) {
-        this.type = type;
-        this.status = true;
+    public Runway(Size size, int number) {
+        this.size = size;
+        this.free = true;
         this.number = number;
     }
 
-    public Plane.Types getType() {
-        return this.type;
+    public Size getSize() {
+        return this.size;
     }
 
-    public boolean getStatus() {
-        return this.status;
+    public boolean isFree() {
+        return this.free;
     }
 
     public int getNumber() {
@@ -24,10 +24,10 @@ public class Runway {
     }
 
     public void close() {
-        this.status = false;
+        this.free = false;
     }
 
     public void open() {
-        this.status = true;
+        this.free = true;
     }
 }

@@ -14,7 +14,7 @@ public class Main {
         while (exit != 0) {
             var planeCount = random.nextInt(3) + 1;
             for (int i = 0; i < planeCount; i++) {
-                airport.takePlane(PlaneGenerator.Generate(airport.getDate()));
+                airport.takePlane(PlaneGenerator.generate(airport.getDate()));
             }
             airport.distributePlanes();
             airport.checkFlights();

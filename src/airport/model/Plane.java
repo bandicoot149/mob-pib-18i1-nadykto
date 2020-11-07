@@ -3,28 +3,24 @@ package airport.model;
 public class Plane {
     public static final int MAX_FUEL = 10;
 
-    public static enum Types {
-        SMALL, MIDDLE, BIG;
-    }
-
-    private final Types type;
+    private final Size size;
     private final int timeDepart;
     private int fuel;
-    private boolean status; // true - air, false - land
+    private boolean flying;
 
-    public Plane(Types type, int fuel, int time) {
-        this.type = type;
+    public Plane(Size size, int fuel, int time) {
+        this.size = size;
         this.fuel = fuel;
         this.timeDepart = time;
-        this.status = true;
+        this.flying = true;
     }
 
-    public Types getType() {
-        return this.type;
+    public Size getSize() {
+        return this.size;
     }
 
-    public boolean getStatus() {
-        return status;
+    public boolean isFlying() {
+        return flying;
     }
 
     public int getTimeDepart() {
@@ -32,11 +28,11 @@ public class Plane {
     }
 
     public void land() {
-        this.status = false;
+        this.flying = false;
     }
 
     public void fly() {
-        this.status = true;
+        this.flying = true;
     }
 
 }
