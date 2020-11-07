@@ -1,11 +1,11 @@
-package airport;
+package airport.model;
 
-class Runway {
+public class Runway {
     private final int number;
     private boolean status; // true - свободно, false - занято
     private final Plane.Types type;
 
-    Runway(Plane.Types type, int number) {
+    public Runway(Plane.Types type, int number) {
         this.type = type;
         this.status = true;
         this.number = number;
@@ -20,7 +20,7 @@ class Runway {
     }
 
     public int getNumber() {
-        return  this.number;
+        return this.number;
     }
 
     public void close() {

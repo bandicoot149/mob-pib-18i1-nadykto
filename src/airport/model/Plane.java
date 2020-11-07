@@ -1,18 +1,18 @@
-package airport;
+package airport.model;
 
-class Plane {
-    static final int MAX_FUEL = 10;
+public class Plane {
+    public static final int MAX_FUEL = 10;
 
-    static enum Types {
+    public static enum Types {
         SMALL, MIDDLE, BIG;
     }
 
     private final Types type;
     private final int timeDepart;
-    int fuel;
+    private int fuel;
     private boolean status; // true - air, false - land
 
-    Plane(Types type, int fuel, int time) {
+    public Plane(Types type, int fuel, int time) {
         this.type = type;
         this.fuel = fuel;
         this.timeDepart = time;

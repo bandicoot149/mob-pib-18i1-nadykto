@@ -1,9 +1,9 @@
-package airport;
+package airport.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class Terminal {
+public class Terminal {
     private List<String> messeges;
 
     public Terminal () {

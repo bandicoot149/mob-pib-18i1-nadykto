@@ -1,5 +1,7 @@
 package airport;
 
+import airport.model.Airport;
+
 import java.util.Random;
 import java.util.Scanner;
 

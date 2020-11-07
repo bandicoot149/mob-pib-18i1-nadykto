@@ -1,17 +1,18 @@
-package airport;
+package airport.model;
+
 
 import java.util.List;
 
-class Dispatcher {
+public class Dispatcher {
     private List<Runway> runways;
     private Terminal terminal;
 
-    Dispatcher(List<Runway> runways, Terminal terminal) {
+    public Dispatcher(List<Runway> runways, Terminal terminal) {
         this.runways = runways;
         this.terminal = terminal;
     }
 
-    void disribute(List<Plane> planes) {
+    public void disribute(List<Plane> planes) {
 
         for (Runway runway : runways) {
             for (Plane plane : planes) {

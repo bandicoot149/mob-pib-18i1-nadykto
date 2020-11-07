@@ -1,5 +1,7 @@
 package airport;
 
+import airport.model.Plane;
+
 import java.util.Random;
 
 public class PlaneGenerator {
