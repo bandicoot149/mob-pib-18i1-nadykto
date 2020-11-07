@@ -1,14 +1,16 @@
 package airport;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Airport airport = new Airport();
         Scanner in = new Scanner(System.in);
+        Random random = new Random();
         int exit = 1;
         while (exit != 0) {
-            int planeCount = (int)(Math.random()*3) + 1;
+            var planeCount = random.nextInt(3) + 1;
             for (int i = 0; i < planeCount; i++) {
                 airport.takePlane(PlaneGenerator.Generate(airport.getDate()));
             }
