@@ -2,7 +2,8 @@ package airport.model;
 
 public class Plane {
     public static final int MAX_FUEL = 10;
-
+    private static int ID = 0; // реализацию я вроде понял, а вот как правильно назвать в таком случае?
+    private final int id;
     private final Size size;
     private final int timeDepart;
     private int fuel;
@@ -13,6 +14,8 @@ public class Plane {
         this.fuel = fuel;
         this.timeDepart = time;
         this.flying = true;
+        this.id = ID;
+        ID++;
     }
 
     public Size getSize() {
@@ -21,6 +24,14 @@ public class Plane {
 
     public boolean isFlying() {
         return flying;
+    }
+
+    public boolean isRefuel() {
+        return this.fuel == MAX_FUEL;
+    }
+
+    public int showFuel() {
+        return this.fuel;
     }
 
     public int getTimeDepart() {
@@ -35,4 +46,16 @@ public class Plane {
         this.flying = true;
     }
 
+    public boolean makeCircle() {
+        this.fuel--;
+        return this.fuel <= 0;
+    }
+
+    public void refuel() {
+        this.fuel = MAX_FUEL;
+    }
+
+    public String toString() {
+        return "Plane № " + this.id + " " + this.size;
+    }
 }

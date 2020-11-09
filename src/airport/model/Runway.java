@@ -19,15 +19,15 @@ public class Runway {
         return this.free;
     }
 
-    public int getNumber() {
-        return this.number;
-    }
-
     public void close() {
         this.free = false;
     }
 
     public void open() {
         this.free = true;
+    }
+
+    public String toString() {
+        return "Runway " + this.number;
     }
 }

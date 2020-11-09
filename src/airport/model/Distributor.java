@@ -2,6 +2,6 @@ package airport.model;
 
 import java.util.List;
 
-public interface Distributer {
+public interface Distributor {
     void distribute(List<Plane> planes);
 }

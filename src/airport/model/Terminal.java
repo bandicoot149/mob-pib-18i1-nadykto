@@ -6,7 +6,7 @@ import java.util.List;
 public class Terminal {
     private final List<String> messages;
 
-    public Terminal () {
+    public Terminal() {
         this.messages = new ArrayList<>();
     }
 
@@ -22,5 +22,9 @@ public class Terminal {
 
     public void cleanMessages() {
         messages.clear();
+    }
+
+    public String toString() {
+        return "Terminal";
     }
 }
