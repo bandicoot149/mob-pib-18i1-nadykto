@@ -1,9 +1,10 @@
 package airport.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Airport {
+public class Airport implements Serializable {
     private final List<Runway> runways = new ArrayList<>();
     private final Distributor dispatcherLanding;
     private final Distributor dispatcherDeparting;
@@ -90,5 +91,13 @@ public class Airport {
 
     public String toString() {
         return "Airport";
+    }
+
+    public void showPlaneLanding () {
+        for (Plane plane : planesLanding) {
+            terminal.addMessage(plane.toString());
+        }
+        terminal.outputOnDisplay(0);
+        terminal.cleanMessages();
     }
 }

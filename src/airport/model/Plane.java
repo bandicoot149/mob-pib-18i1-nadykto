@@ -1,6 +1,8 @@
 package airport.model;
 
-public class Plane {
+import java.io.Serializable;
+
+public class Plane implements Serializable {
     public static final int MAX_FUEL = 10;
     private static int ID = 0; // реализацию я вроде понял, а вот как правильно назвать в таком случае?
     private final int id;

@@ -1,9 +1,10 @@
 package airport.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Terminal {
+public class Terminal implements Serializable {
     private final List<String> messages;
 
     public Terminal() {
@@ -11,7 +12,7 @@ public class Terminal {
     }
 
     public void outputOnDisplay(int day) {
-        System.out.println("day " + day);
+        // System.out.println("day " + day);
         for (String msg : messages)
             System.out.println(msg);
     }

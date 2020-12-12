@@ -1,6 +1,8 @@
 package airport.model;
 
-public class Runway {
+import java.io.Serializable;
+
+public class Runway implements Serializable {
     private final int number;
     private boolean free;
     private final Size size;
